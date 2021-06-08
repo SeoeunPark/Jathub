@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail Introduction{% endblock %}
+
+{% block content %}
+    {{ introduction.contents }}
+    <table border="1">
+        <tbody>
+        {% for comment in introduction.comment_set.all %}
+            <tr>
+                <td>{{ comment.comment }}</td>
+                <td>수정</td>
+                <td>삭제</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
